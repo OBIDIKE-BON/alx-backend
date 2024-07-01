@@ -2,7 +2,10 @@
 import csv
 import math
 from typing import List
-"""Module to get idices"""
+
+"""
+Module to gets the compuye indeces and return dataset correctly
+"""
 
 
 class Server:
@@ -25,13 +28,15 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Function that gets the right dataset or pages"""
+
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
         start_idx, end_idx = index_range(page, page_size)
         dataset = self.dataset()
 
-        if(start_idx >= len(dataset)):
+        if (start_idx >= len(dataset)):
             return []
 
         return dataset[start_idx:end_idx]
