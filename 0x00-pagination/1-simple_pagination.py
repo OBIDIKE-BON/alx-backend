@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-import csv
-from typing import List
 """Module to gets the compuye indeces and return dataset correctly
 """
+import csv
+from typing import List
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """Server class to paginate a database of popular baby names
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
