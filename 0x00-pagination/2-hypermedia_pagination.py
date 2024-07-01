@@ -50,16 +50,24 @@ class Server:
 
         new_dataset = dataset[start_idx:end_idx]
 
-        next_page = None if end_idx >= len(dataset) else page + 1,
-        prev_page = None if page <= 1 else page - 1
         total_pages = (len(dataset)//page_size-1)
+
+        if page >= total_pages:
+            next_page = None
+        else:
+            next_page = page + 1
+
+        if page <= 1:
+            prev_page = None
+        else:
+            prev_page = page - 1
 
         if start_idx >= len(dataset):
             return {
                 'page_size': 0,
                 'page': page,
                 'data': [],
-                'next_page': None,
+                'next_page': next_page,
                 'prev_page': prev_page,
                 'total_pages': 0
             }
