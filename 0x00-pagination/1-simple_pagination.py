@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 import csv
-import math
 from typing import List
-
-"""
-Module to gets the compuye indeces and return dataset correctly
+"""Module to gets the compuye indeces and return dataset correctly
 """
 
 
@@ -14,10 +11,11 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """Initialize the dataset to be used"""
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
+        """Cache dataset and return it
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
