@@ -2,12 +2,20 @@
 """
 Main file
 """
-
-
 index_range = __import__('0-simple_helper_function').index_range
 Server = __import__('1-simple_pagination').Server
+Server = __import__('2-hypermedia_pagination').Server
 
 server = Server()
+
+print(server.get_hyper(1, 2))
+print("---")
+print(server.get_hyper(2, 2))
+print("---")
+print(server.get_hyper(100, 3))
+print("---")
+print(server.get_hyper(3000, 100))
+print("---")
 
 try:
     should_err = server.get_page(-10, 2)
